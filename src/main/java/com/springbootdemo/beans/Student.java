@@ -41,6 +41,10 @@ public class Student {
 		this.age = age;
 		this.address = address;
 	}
+	public Student(String firstName2, String lastName2) {
+		this.firstName = firstName2;
+		this.lastName = lastName2;
+	}
 	
 	
 	
