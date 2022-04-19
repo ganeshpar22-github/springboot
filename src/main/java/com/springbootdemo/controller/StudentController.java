@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springbootdemo.beans.Student;
@@ -32,9 +33,16 @@ public class StudentController {
 	}
 	
 	
-	@GetMapping("student/{firstName}/{lastName}")
+	@GetMapping("/student/{firstName}/{lastName}")
 	public Student getStudentPathVariable(@PathVariable("firstName") String firstName,@PathVariable("lastName") String lastName)
 	{
+		return new Student(firstName, lastName);
+	}
+	
+	
+	//requst param example
+	@GetMapping("/studentParam")
+	public Student getStudentParam(@RequestParam(name="firstName") String firstName,@RequestParam(name="lastName") String lastName) {
 		return new Student(firstName, lastName);
 	}
 
